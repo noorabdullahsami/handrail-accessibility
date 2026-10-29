@@ -1,0 +1,523 @@
+{
+  "source": "https://www.w3.org/WAI/WCAG22/wcag.json",
+  "spec": "https://www.w3.org/TR/WCAG22/",
+  "published": "2024-12-12",
+  "criteria": [
+    {
+      "num": "1.1.1",
+      "name": "Non-text Content",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html"
+    },
+    {
+      "num": "1.2.1",
+      "name": "Audio-only and Video-only (Prerecorded)",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html"
+    },
+    {
+      "num": "1.2.2",
+      "name": "Captions (Prerecorded)",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html"
+    },
+    {
+      "num": "1.2.3",
+      "name": "Audio Description or Media Alternative (Prerecorded)",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html"
+    },
+    {
+      "num": "1.2.4",
+      "name": "Captions (Live)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html"
+    },
+    {
+      "num": "1.2.5",
+      "name": "Audio Description (Prerecorded)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html"
+    },
+    {
+      "num": "1.2.6",
+      "name": "Sign Language (Prerecorded)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/sign-language-prerecorded.html"
+    },
+    {
+      "num": "1.2.7",
+      "name": "Extended Audio Description (Prerecorded)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/extended-audio-description-prerecorded.html"
+    },
+    {
+      "num": "1.2.8",
+      "name": "Media Alternative (Prerecorded)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded.html"
+    },
+    {
+      "num": "1.2.9",
+      "name": "Audio-only (Live)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-live.html"
+    },
+    {
+      "num": "1.3.1",
+      "name": "Info and Relationships",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+    },
+    {
+      "num": "1.3.2",
+      "name": "Meaningful Sequence",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html"
+    },
+    {
+      "num": "1.3.3",
+      "name": "Sensory Characteristics",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html"
+    },
+    {
+      "num": "1.3.4",
+      "name": "Orientation",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/orientation.html"
+    },
+    {
+      "num": "1.3.5",
+      "name": "Identify Input Purpose",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+    },
+    {
+      "num": "1.3.6",
+      "name": "Identify Purpose",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-purpose.html"
+    },
+    {
+      "num": "1.4.1",
+      "name": "Use of Color",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html"
+    },
+    {
+      "num": "1.4.2",
+      "name": "Audio Control",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html"
+    },
+    {
+      "num": "1.4.3",
+      "name": "Contrast (Minimum)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+    },
+    {
+      "num": "1.4.4",
+      "name": "Resize Text",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html"
+    },
+    {
+      "num": "1.4.5",
+      "name": "Images of Text",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html"
+    },
+    {
+      "num": "1.4.6",
+      "name": "Contrast (Enhanced)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html"
+    },
+    {
+      "num": "1.4.7",
+      "name": "Low or No Background Audio",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/low-or-no-background-audio.html"
+    },
+    {
+      "num": "1.4.8",
+      "name": "Visual Presentation",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html"
+    },
+    {
+      "num": "1.4.9",
+      "name": "Images of Text (No Exception)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/images-of-text-no-exception.html"
+    },
+    {
+      "num": "1.4.10",
+      "name": "Reflow",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html"
+    },
+    {
+      "num": "1.4.11",
+      "name": "Non-text Contrast",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+    },
+    {
+      "num": "1.4.12",
+      "name": "Text Spacing",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html"
+    },
+    {
+      "num": "1.4.13",
+      "name": "Content on Hover or Focus",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html"
+    },
+    {
+      "num": "2.1.1",
+      "name": "Keyboard",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html"
+    },
+    {
+      "num": "2.1.2",
+      "name": "No Keyboard Trap",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html"
+    },
+    {
+      "num": "2.1.3",
+      "name": "Keyboard (No Exception)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard-no-exception.html"
+    },
+    {
+      "num": "2.1.4",
+      "name": "Character Key Shortcuts",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html"
+    },
+    {
+      "num": "2.2.1",
+      "name": "Timing Adjustable",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html"
+    },
+    {
+      "num": "2.2.2",
+      "name": "Pause, Stop, Hide",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
+    },
+    {
+      "num": "2.2.3",
+      "name": "No Timing",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/no-timing.html"
+    },
+    {
+      "num": "2.2.4",
+      "name": "Interruptions",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/interruptions.html"
+    },
+    {
+      "num": "2.2.5",
+      "name": "Re-authenticating",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/re-authenticating.html"
+    },
+    {
+      "num": "2.2.6",
+      "name": "Timeouts",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/timeouts.html"
+    },
+    {
+      "num": "2.3.1",
+      "name": "Three Flashes or Below Threshold",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html"
+    },
+    {
+      "num": "2.3.2",
+      "name": "Three Flashes",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes.html"
+    },
+    {
+      "num": "2.3.3",
+      "name": "Animation from Interactions",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html"
+    },
+    {
+      "num": "2.4.1",
+      "name": "Bypass Blocks",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html"
+    },
+    {
+      "num": "2.4.2",
+      "name": "Page Titled",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html"
+    },
+    {
+      "num": "2.4.3",
+      "name": "Focus Order",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+    },
+    {
+      "num": "2.4.4",
+      "name": "Link Purpose (In Context)",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html"
+    },
+    {
+      "num": "2.4.5",
+      "name": "Multiple Ways",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/multiple-ways.html"
+    },
+    {
+      "num": "2.4.6",
+      "name": "Headings and Labels",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html"
+    },
+    {
+      "num": "2.4.7",
+      "name": "Focus Visible",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html"
+    },
+    {
+      "num": "2.4.8",
+      "name": "Location",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/location.html"
+    },
+    {
+      "num": "2.4.9",
+      "name": "Link Purpose (Link Only)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only.html"
+    },
+    {
+      "num": "2.4.10",
+      "name": "Section Headings",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/section-headings.html"
+    },
+    {
+      "num": "2.4.11",
+      "name": "Focus Not Obscured (Minimum)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+    },
+    {
+      "num": "2.4.12",
+      "name": "Focus Not Obscured (Enhanced)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced.html"
+    },
+    {
+      "num": "2.4.13",
+      "name": "Focus Appearance",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html"
+    },
+    {
+      "num": "2.5.1",
+      "name": "Pointer Gestures",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/pointer-gestures.html"
+    },
+    {
+      "num": "2.5.2",
+      "name": "Pointer Cancellation",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/pointer-cancellation.html"
+    },
+    {
+      "num": "2.5.3",
+      "name": "Label in Name",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html"
+    },
+    {
+      "num": "2.5.4",
+      "name": "Motion Actuation",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/motion-actuation.html"
+    },
+    {
+      "num": "2.5.5",
+      "name": "Target Size (Enhanced)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html"
+    },
+    {
+      "num": "2.5.6",
+      "name": "Concurrent Input Mechanisms",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/concurrent-input-mechanisms.html"
+    },
+    {
+      "num": "2.5.7",
+      "name": "Dragging Movements",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html"
+    },
+    {
+      "num": "2.5.8",
+      "name": "Target Size (Minimum)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    },
+    {
+      "num": "3.1.1",
+      "name": "Language of Page",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html"
+    },
+    {
+      "num": "3.1.2",
+      "name": "Language of Parts",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html"
+    },
+    {
+      "num": "3.1.3",
+      "name": "Unusual Words",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/unusual-words.html"
+    },
+    {
+      "num": "3.1.4",
+      "name": "Abbreviations",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/abbreviations.html"
+    },
+    {
+      "num": "3.1.5",
+      "name": "Reading Level",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html"
+    },
+    {
+      "num": "3.1.6",
+      "name": "Pronunciation",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/pronunciation.html"
+    },
+    {
+      "num": "3.2.1",
+      "name": "On Focus",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/on-focus.html"
+    },
+    {
+      "num": "3.2.2",
+      "name": "On Input",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/on-input.html"
+    },
+    {
+      "num": "3.2.3",
+      "name": "Consistent Navigation",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html"
+    },
+    {
+      "num": "3.2.4",
+      "name": "Consistent Identification",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html"
+    },
+    {
+      "num": "3.2.5",
+      "name": "Change on Request",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/change-on-request.html"
+    },
+    {
+      "num": "3.2.6",
+      "name": "Consistent Help",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html"
+    },
+    {
+      "num": "3.3.1",
+      "name": "Error Identification",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html"
+    },
+    {
+      "num": "3.3.2",
+      "name": "Labels or Instructions",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+    },
+    {
+      "num": "3.3.3",
+      "name": "Error Suggestion",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html"
+    },
+    {
+      "num": "3.3.4",
+      "name": "Error Prevention (Legal, Financial, Data)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html"
+    },
+    {
+      "num": "3.3.5",
+      "name": "Help",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/help.html"
+    },
+    {
+      "num": "3.3.6",
+      "name": "Error Prevention (All)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-all.html"
+    },
+    {
+      "num": "3.3.7",
+      "name": "Redundant Entry",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html"
+    },
+    {
+      "num": "3.3.8",
+      "name": "Accessible Authentication (Minimum)",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html"
+    },
+    {
+      "num": "3.3.9",
+      "name": "Accessible Authentication (Enhanced)",
+      "level": "AAA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html"
+    },
+    {
+      "num": "4.1.2",
+      "name": "Name, Role, Value",
+      "level": "A",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+    },
+    {
+      "num": "4.1.3",
+      "name": "Status Messages",
+      "level": "AA",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
+    }
+  ]
+}

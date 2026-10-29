@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+  CLEAN BASELINE. The end-to-end test expects 0 WCAG violations here,
+  and all 6 automated core checks to show "Nothing found by automated checks".
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Good test page</title>
+  <style>
+    body { font-family: sans-serif; background: #fff; color: #111; margin: 0; }
+    header, main, footer { padding: 1rem; }
+    a { color: #0b4fb3; }
+    button, input { font: inherit; min-height: 44px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Main">
+      <a href="good.html">Home</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Good test page</h1>
+    <p>This text has plenty of contrast.</p>
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="40" height="40" alt="A small gray square">
+    <form>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email">
+      <button type="submit">Sign up</button>
+    </form>
+  </main>
+  <footer>
+    <p><a href="broken.html">See the broken test page</a></p>
+  </footer>
+</body>
+</html>

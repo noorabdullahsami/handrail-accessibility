@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Keyboard problem page</title>
+  <!--
+    keyboard: issues 1, possible 3
+      issue     a scrolling box with nothing focusable in it (axe scrollable-region-focusable)
+      possible  div with onclick; span role="button" with no tabindex; div with cursor: pointer
+    Not flagged on purpose: inactive tabs with tabindex="-1" (the page moves focus to them)
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } .pointer, .card { cursor: pointer; } .card { cursor: default; } .scroller { height: 60px; width: 200px; overflow: auto; border: 1px solid #333; }</style>
+</head>
+<body>
+<main>
+  <h1>Keyboard problem page</h1>
+  <div class="card" onclick="void 0">Open card</div>
+  <span role="button">Fake button</span>
+  <div class="pointer">Pointer only</div>
+  <div class="scroller"><p>Line one of a long text.</p><p>Line two.</p><p>Line three.</p><p>Line four.</p><p>Line five.</p><p>Line six.</p></div>
+  <div role="tablist" aria-label="Plans">
+    <button role="tab" aria-selected="true" tabindex="0">Basic</button>
+    <div role="tab" aria-selected="false" tabindex="-1" class="pointer">Pro</div>
+  </div>
+</main>
+</body>
+</html>

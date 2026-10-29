@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The real name comes from _locales/en/messages.json and is set by panel.js. -->
+  <title>Accessibility checker</title>
+  <link rel="stylesheet" href="panel.css">
+  <script type="module" src="panel.js"></script>
+</head>
+<body>
+  <!-- Screen reader announcements: "Scanning", "Scan complete", errors. -->
+  <div id="announcer" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="app-header">
+    <h1 id="app-name"><img src="../icons/handrail-mark.svg" alt="" width="20" height="20"><span data-name>Accessibility checker</span></h1>
+    <!-- The main action comes right after the name; "Last scanned" is its caption. -->
+    <div class="header-actions">
+      <button type="button" id="scan-button" class="button primary">Scan this page</button>
+      <button type="button" id="clear-highlight" class="button" hidden>Remove highlight</button>
+      <p id="last-scanned" class="muted">Not scanned yet</p>
+    </div>
+    <!-- Shown while the focus checks run after a scan. Text comes from messages.json. -->
+    <div id="focus-progress" class="focus-progress" hidden>
+      <p id="focus-progress-text"></p>
+      <button type="button" id="focus-cancel" class="button small"></button>
+    </div>
+    <p class="page-label">
+      <span class="label-word">Page:</span>
+      <span id="page-title"></span>
+      <span id="page-label">Finding the current page…</span>
+    </p>
+  </header>
+
+  <main id="main">
+    <!-- Shown when a page cannot be scanned or something went wrong. -->
+    <div id="notice" class="notice" hidden tabindex="-1">
+      <p id="notice-kind" class="notice-kind"></p>
+      <h2 id="notice-title" class="notice-title"></h2>
+      <p id="notice-detail"></p>
+      <details id="notice-technical" class="technical" hidden>
+        <summary>Technical details</summary>
+        <pre><code id="notice-technical-text"></code></pre>
+      </details>
+    </div>
+
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading" tabindex="-1">Summary</h2>
+      <p id="headline" class="headline">Not scanned yet</p>
+      <!-- The Core 8 meter. Hidden from screen readers: the headline above and
+           the list below say the same thing in words. -->
+      <div id="meter" class="meter" aria-hidden="true"></div>
+      <p id="since-last" class="since-last" hidden></p>
+      <p id="stale-note" class="muted" hidden></p>
+      <ul id="core-list" class="core-list"></ul>
+      <div id="frames-note" class="frames-note" hidden></div>
+    </section>
+
+    <section aria-labelledby="fix-heading" id="fix-section" hidden>
+      <h2 id="fix-heading">Fix these next</h2>
+      <p id="fix-empty" class="muted" hidden>The scan found no WCAG issues. Keep going with the checks under "Needs a human check".</p>
+      <ol id="fix-list" class="issue-list"></ol>
+    </section>
+
+    <section aria-labelledby="other-heading" id="other-section" hidden>
+      <h2 id="other-heading">Other issues</h2>
+      <p id="other-intro" class="muted"></p>
+      <button type="button" id="other-toggle" class="button" aria-expanded="false" aria-controls="other-list">Show all other issues</button>
+      <ul id="other-list" class="issue-list" hidden></ul>
+    </section>
+
+    <section aria-labelledby="human-heading">
+      <h2 id="human-heading">Needs a human check</h2>
+      <div id="review-block" hidden>
+        <h3>Flagged by the scan</h3>
+        <p class="muted">The scan found these but could not decide if they are a problem. Look at each one yourself.</p>
+        <ul id="review-list" class="issue-list"></ul>
+      </div>
+      <h3 id="guided-heading">Guided checks</h3>
+      <p class="muted">A scan cannot test these. Follow the steps, then mark each one.</p>
+      <p id="guided-progress" class="progress"></p>
+      <p id="guided-save-note" class="muted" hidden>Your answers on this page cannot be saved, because the page cannot be scanned.</p>
+      <ul id="guided-list" class="issue-list"></ul>
+    </section>
+
+    <section aria-labelledby="bp-heading" id="bp-section" hidden>
+      <details id="bp-details" class="section-details">
+        <summary><h2 id="bp-heading">Best practices (not WCAG failures)</h2></summary>
+        <p class="muted">These are good habits that make pages easier to use. They are not WCAG failures, so they do not count toward the core checks.</p>
+        <ul id="bp-list" class="issue-list"></ul>
+      </details>
+    </section>
+  </main>
+
+  <footer class="app-footer" aria-labelledby="footer-heading">
+    <h2 id="footer-heading">Report and saved data</h2>
+    <div class="footer-actions">
+      <button type="button" id="copy-report" class="button">Copy report</button>
+      <button type="button" id="clear-page" class="button">Clear this page's data</button>
+      <button type="button" id="clear-all" class="button">Clear all data</button>
+    </div>
+    <p id="report-note" class="muted" hidden>Scan this page first. The report needs a scan to describe.</p>
+    <div id="confirm-box" class="confirm" hidden tabindex="-1">
+      <p id="confirm-text"></p>
+      <div class="footer-actions">
+        <button type="button" id="confirm-yes" class="button danger">Yes, clear it</button>
+        <button type="button" id="confirm-no" class="button">Cancel</button>
+      </div>
+    </div>
+    <div id="report-fallback" hidden>
+      <label for="report-text">Copying did not work. Select the report below and copy it with Ctrl+C (Cmd+C on Mac).</label>
+      <textarea id="report-text" rows="10" readonly></textarea>
+    </div>
+    <p><a href="privacy.html" target="_blank" rel="noopener">Privacy: what <span data-name>this extension</span> stores (opens in a new tab)</a></p>
+    <p class="caveat">Automated checks only find some problems. A clean scan does not mean your page meets WCAG.</p>
+  </footer>
+</body>
+</html>

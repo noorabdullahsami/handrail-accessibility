@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shadow DOM test page</title>
+  <!--
+    swap-card    an open shadow root with an image that has no alt text.
+                 The end-to-end test replaces it with a new swap-card whose
+                 root is closed (as a re-render could), so Show on page must
+                 say it cannot look inside a closed component.
+    sealed-card  a closed shadow root with an image that has no alt text.
+                 Nothing outside a closed root can see inside it, axe
+                 included, so the scan finds only 1 image issue on this page.
+  -->
+</head>
+<body>
+  <main>
+    <h1>Shadow DOM test page</h1>
+    <swap-card></swap-card>
+    <sealed-card></sealed-card>
+  </main>
+  <script src="shadow.js"></script>
+</body>
+</html>

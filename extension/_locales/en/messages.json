@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Handrail: Accessibility Checker",
+    "description": "The full name, shown in Chrome and as the Web Store listing title. Max 45 characters."
+  },
+  "extShortName": {
+    "message": "Handrail",
+    "description": "The short name, used in the panel header, the report, and the zip file name. Max 12 characters. The name is only set in this file."
+  },
+  "extDescription": {
+    "message": "Scan the page you have open for accessibility problems, then get a plain-language checklist for the checks a scan can't do.",
+    "description": "Short description shown in Chrome and the Web Store. Max 132 characters."
+  },
+  "statusQuickCheck": {
+    "message": "Needs a quick check"
+  },
+  "statusPossible": {
+    "message": "Possible problems ({count})"
+  },
+  "levelPossible": {
+    "message": "Possible problem, check this"
+  },
+  "groupNoFocusConfirmed": {
+    "message": "No visible change when focused (checked on screen)"
+  },
+  "groupInvisibleFocus": {
+    "message": "Gets focus but cannot be seen"
+  },
+  "groupFaintFocus": {
+    "message": "Focus change is very faint"
+  },
+  "groupMaybeNoFocus": {
+    "message": "May have no visible focus (not checked on screen)"
+  },
+  "groupPositiveTabindex": {
+    "message": "A tabindex above zero changes the Tab order"
+  },
+  "groupOrderJumps": {
+    "message": "Focus jumps around the page"
+  },
+  "groupCoveredBySticky": {
+    "message": "Hidden behind a sticky bar when focused"
+  },
+  "groupDuplicateLinks": {
+    "message": "Same link text, different addresses"
+  },
+  "groupSameAlts": {
+    "message": "Same alt text on different images"
+  },
+  "groupNoSkip": {
+    "message": "No skip link near the top and no main landmark. A landmark is a marked region, like <main>, that screen reader users can jump to."
+  },
+  "noteFocusStops": {
+    "message": "The focus checks visited {stops} of {total} places you can Tab to."
+  },
+  "noteFocusCapped": {
+    "message": "This page has {total} places you can Tab to. The focus checks stopped at the first {max}."
+  },
+  "noteFocusTime": {
+    "message": "The focus checks stopped at the 20 second limit, after {done} of {total} places."
+  },
+  "noteFocusCancelled": {
+    "message": "The focus checks were cancelled after {done} of {total} places. Scan again to run them fully."
+  },
+  "notePixelSkipped": {
+    "message": "Chrome did not allow the on-screen check, so the focus results here are less sure."
+  },
+  "noteUnreadableSheets": {
+    "message": "Style sheets that could not be read (from another site): {count}. Focus results may be wrong."
+  },
+  "autoCheckedLabel": {
+    "message": "What the scan checked:"
+  },
+  "autoNothing": {
+    "message": "Nothing found by automated checks. Still check: {still}"
+  },
+  "autoStill": {
+    "message": "Still check: {still}"
+  },
+  "autoNeedsScan": {
+    "message": "Scan the page to run these checks."
+  },
+  "autoFocusRunning": {
+    "message": "Checking keyboard focus now. Results will show here."
+  },
+  "autoFocusFailed": {
+    "message": "The focus checks could not run on this page."
+  },
+  "autoKeyboardLimit": {
+    "message": "A script cannot press the Tab key for real, so keyboard traps and how custom controls react to Enter, Space and the arrow keys still need a person."
+  },
+  "progressFocus": {
+    "message": "Checking focus: {done} of {total}"
+  },
+  "progressCancel": {
+    "message": "Cancel"
+  },
+  "announceFocusStart": {
+    "message": "Now checking keyboard focus. The page will scroll."
+  },
+  "announceFocusDone": {
+    "message": "Focus checks done. Core checks: {good} of {total} look good."
+  },
+  "showAll": {
+    "message": "Show all {count}"
+  },
+  "auto_checked_keyboard": {
+    "message": "Everything you can Tab to, things that look clickable but cannot be reached with Tab, and axe rules for keyboard access."
+  },
+  "auto_still_keyboard": {
+    "message": "Use Tab, Shift+Tab, Enter, Space and the arrow keys on every control, and make sure focus never gets stuck."
+  },
+  "auto_checked_focus_visible": {
+    "message": "Each place you can Tab to: whether its look changes with focus, and a before and after screenshot for those that seem not to."
+  },
+  "auto_still_focus_visible": {
+    "message": "Tab through the page and make sure you can always see where you are."
+  },
+  "auto_checked_focus_not_hidden": {
+    "message": "Whether each focused element is fully covered by a fixed or sticky bar."
+  },
+  "auto_still_focus_not_hidden": {
+    "message": "Tab through the page with menus and banners open, and make sure focus is never hidden."
+  },
+  "auto_checked_focus_order": {
+    "message": "tabindex values above zero, and places where focus jumps back up the page or backwards along a row."
+  },
+  "auto_still_focus_order": {
+    "message": "Tab through the page and make sure the order matches the reading order."
+  },
+  "auto_checked_skip_link": {
+    "message": "A same-page link among the first three Tab stops, a main landmark, and axe rules for skipping repeated content."
+  },
+  "auto_still_skip_link": {
+    "message": "Load the page, press Tab once, and make sure a skip link appears and works."
+  },
+  "auto_checked_link_purpose": {
+    "message": "Links with vague text like \"click here\", and links with the same text that go to different places."
+  },
+  "auto_still_link_purpose": {
+    "message": "Read each link's text on its own and make sure it says where it goes."
+  },
+  "auto_checked_alt_text_quality": {
+    "message": "Alt text that looks like a file name, says only \"image\" or \"photo\", starts with \"image of\", is very long, or repeats on different images."
+  },
+  "auto_still_alt_text_quality": {
+    "message": "Read each image's alt text and make sure it says what matters about the image."
+  },
+  "auto_checked_target_size": {
+    "message": "The size of buttons and links, and the space around small ones (axe's target size rule)."
+  },
+  "auto_still_target_size": {
+    "message": "Try the page on a phone and make sure nothing is hard to tap."
+  },
+  "auto_checked_structure": {
+    "message": "Lists, tables and headings, using axe's structure rules."
+  },
+  "auto_still_structure": {
+    "message": "Make sure things that look like headings, lists or tables are marked up as them."
+  },
+  "auto_checked_custom_controls": {
+    "message": "Custom controls' roles, names and states, using axe's ARIA rules. ARIA is a set of attributes that tell assistive tech what a control is."
+  },
+  "auto_still_custom_controls": {
+    "message": "Try each custom control with a screen reader and make sure it says its name, role and state."
+  },
+  "auto_checked_labels_instructions": {
+    "message": "Labels on form fields, using axe's label rules, and fields named only by placeholder text."
+  },
+  "auto_still_labels_instructions": {
+    "message": "Make sure every field says what to enter and in what format."
+  },
+  "auto_checked_use_of_color": {
+    "message": "Links in text that differ from the text around them only by color."
+  },
+  "auto_still_use_of_color": {
+    "message": "Look for anything else that uses only color to show meaning, like red for errors."
+  },
+  "meterNumber": {
+    "message": "{good} of {total}"
+  },
+  "meterLookGood": {
+    "message": "core checks look good"
+  }
+}

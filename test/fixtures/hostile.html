@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- The page itself may not load anything from elsewhere or run inline code,
+       so any request to the ping server can only come from the panel. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Hostile snippets test page</title>
+  <!--
+    Each element below has an accessibility issue, so its HTML ends up as a
+    snippet in the panel. Each snippet would do something if the panel ever
+    rendered it as HTML: load from the ping server (127.0.0.1:8126 during the
+    end-to-end test), run code, or restyle the panel. The panel must only show
+    them as text, and the ping server must get zero requests.
+      image-alt     img with onerror and a ping src
+      svg-img-alt   svg role=img with onload
+      link-name     javascript: link holding an img with a ping src
+      button-name   button holding a style tag that would hide the panel's
+                    header and load a ping image (it targets only panel class
+                    names, so this page itself is unaffected)
+  -->
+</head>
+<body>
+  <main>
+    <h1>Hostile snippets test page</h1>
+    <img src="http://127.0.0.1:8126/ping/img" onerror="window.__pwned = 'img'">
+    <svg role="img" onload="window.__pwned = 'svg'" width="20" height="20"><rect width="20" height="20"></rect></svg>
+    <a href="javascript:window.__pwned='link'"><img src="http://127.0.0.1:8126/ping/link" alt=""></a>
+    <button type="button"><style>.app-header, #scan-button { display: none !important; } .item { background: url(http://127.0.0.1:8126/ping/css) !important; }</style></button>
+  </main>
+</body>
+</html>

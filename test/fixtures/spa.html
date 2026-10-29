@@ -1,0 +1,33 @@
+<!doctype html>
+<!--
+  STICKY HEADER + SPA ROUTE CHANGE.
+  - The sticky header can cover focused items (WCAG 2.4.11 guided check).
+  - The nav buttons change the address with history.pushState, like a
+    single-page app. Going to "About" changes the path to /spa-about, so the
+    panel should treat it as a different page (results from /spa.html no longer apply).
+    Note: reloading /spa-about with python -m http.server gives a 404. That is expected.
+  - The About view has one image with no alt text (image-alt: 1). Home has none.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SPA test page</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; color: #111; background: #fff; }
+    header { position: sticky; top: 0; background: #0f3d91; color: #fff; padding: 1rem; }
+    header button { font: inherit; min-height: 44px; }
+    main { padding: 1rem; }
+    .spacer { height: 150vh; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Main">
+      <button type="button" data-route="spa.html">Home</button>
+      <button type="button" data-route="spa-about">About</button>
+    </nav>
+  </header>
+  <main id="view"></main>
+  <script src="spa.js"></script>
+</body>
+</html>

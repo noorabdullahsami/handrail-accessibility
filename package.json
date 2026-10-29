@@ -1,0 +1,35 @@
+{
+  "name": "handrail-accessibility",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development tooling for the Handrail Chrome extension. The extension itself has no build step.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noorabdullahsami/handrail-accessibility.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.2"
+  },
+  "scripts": {
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test \"test/unit/*.test.js\"",
+    "test:e2e": "node test/e2e/run.mjs && node test/e2e/hints.mjs && node test/e2e/preview.mjs",
+    "build": "node scripts/build.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "vendor": "node scripts/vendor.mjs",
+    "notices": "node scripts/notices.mjs",
+    "check:links": "node scripts/check-links.js",
+    "wcag": "node scripts/wcag22.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "axe-core": "^4.14.0",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "puppeteer": "^25.16.0"
+  }
+}

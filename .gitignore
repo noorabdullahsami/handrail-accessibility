@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+test-results/
+test/.build/
+test/screenshots/
+.env*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/

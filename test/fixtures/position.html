@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Highlight position test page</title>
+  <!--
+    Two buttons with no text (2 button-name issues), each inside a parent
+    that changes how it is drawn:
+      .scaled  transform: scale(1.5)
+      .zoomed  zoom: 2
+    The outline from Show on page must sit on each button.
+    Add ?dark to the address for a dark page.
+  -->
+  <style>
+    body { font-family: sans-serif; background: #fff; color: #111; margin: 2rem; }
+    html.dark body { background: #111; color: #eee; }
+    .box { margin: 2rem 0 4rem; }
+    .scaled { transform: scale(1.5); transform-origin: top left; }
+    .zoomed { zoom: 2; }
+    button { width: 60px; height: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Highlight position test page</h1>
+    <div class="box scaled"><button type="button" id="scaled-button"></button></div>
+    <div class="box zoomed"><button type="button" id="zoomed-button"></button></div>
+  </main>
+  <script src="position.js"></script>
+</body>
+</html>

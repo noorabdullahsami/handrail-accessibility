@@ -1,0 +1,464 @@
+[
+  {
+    "id": "keyboard",
+    "wcag": "2.1.1",
+    "level": "A",
+    "core": true,
+    "new_in_2_2": false,
+    "title": "Everything works with just a keyboard",
+    "why": "Some people can't use a mouse. They rely on the keyboard or on devices that act like one.",
+    "how_to_check": [
+      "Set your mouse aside.",
+      "Press Tab to move forward and Shift+Tab to move back through the page.",
+      "Try to open every menu, button, dialog, and form using Enter, Space, and the arrow keys."
+    ],
+    "pass_looks_like": "You can reach and use every control, and nothing needs a mouse hover or click to work.",
+    "common_fixes": "Use real buttons and links instead of clickable divs. If you build a custom control, add keyboard handling for Enter and Space.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
+    "axe_rules": [
+      "scrollable-region-focusable",
+      "frame-focusable-content",
+      "aria-hidden-focus",
+      "nested-interactive",
+      "tabindex"
+    ],
+    "helpers": ["clickables"]
+  },
+  {
+    "id": "focus-visible",
+    "wcag": "2.4.7",
+    "level": "AA",
+    "core": true,
+    "new_in_2_2": false,
+    "title": "You can always see where the keyboard focus is",
+    "why": "Keyboard users need to know which element is active, the way mouse users can see their cursor.",
+    "how_to_check": [
+      "Press Tab through the whole page.",
+      "Watch for a clear outline or highlight on each item as you land on it."
+    ],
+    "pass_looks_like": "Every focused item has a visible, easy-to-spot indicator.",
+    "common_fixes": "Don't remove outlines with 'outline: none' unless you replace them with something just as clear.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+    "axe_rules": [],
+    "helpers": ["focus-walk"]
+  },
+  {
+    "id": "no-keyboard-trap",
+    "wcag": "2.1.2",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Focus never gets stuck",
+    "why": "If keyboard focus gets trapped in a widget, a keyboard user can't leave it.",
+    "how_to_check": [
+      "Tab into every dialog, menu, video player, and embedded widget.",
+      "Check that you can always Tab or press Escape to get out."
+    ],
+    "pass_looks_like": "You can always move focus away from any part of the page.",
+    "common_fixes": "Make dialogs closable with Escape, and return focus to the button that opened them.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "focus-order",
+    "wcag": "2.4.3",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Tab order follows the page in a sensible order",
+    "why": "A jumpy tab order makes it hard to follow what's going on, especially with a screen reader.",
+    "how_to_check": [
+      "Press Tab through the page from the top.",
+      "Check the order matches how you'd read it: top to bottom, left to right."
+    ],
+    "pass_looks_like": "Focus moves in an order that matches the visual layout and meaning.",
+    "common_fixes": "Fix the order in the HTML itself. Avoid positive tabindex values.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html",
+    "axe_rules": [],
+    "helpers": ["focus-walk"]
+  },
+  {
+    "id": "skip-link",
+    "wcag": "2.4.1",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "There is a way to skip repeated navigation",
+    "why": "Without it, keyboard users must Tab through the same menu on every page before reaching the content.",
+    "how_to_check": [
+      "Load the page and press Tab once.",
+      "Look for a 'Skip to content' link, or check the page has proper landmarks (header, nav, main)."
+    ],
+    "pass_looks_like": "A skip link or clear landmarks let you jump straight to the main content.",
+    "common_fixes": "Add a 'Skip to main content' link as the first focusable item and use a <main> element.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html",
+    "axe_rules": ["bypass", "skip-link"],
+    "helpers": ["skip"],
+    "axe_possible": ["landmark-one-main", "region"]
+  },
+  {
+    "id": "link-purpose",
+    "wcag": "2.4.4",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Links make sense in their context",
+    "why": "Screen reader users often browse a list of links. 'Click here' tells them nothing.",
+    "how_to_check": [
+      "Read each link's text together with the sentence, paragraph, list item, or table cell it sits in.",
+      "Ask: can I tell where this link goes from that?",
+      "Link text that makes sense on its own is even better."
+    ],
+    "pass_looks_like": "Each link's purpose is clear from its text, or from its text plus the sentence, list item, or table cell around it.",
+    "common_fixes": "Replace 'click here' and 'read more' with specific text, or add hidden text that completes the meaning.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html",
+    "axe_rules": [],
+    "helpers": ["links", "duplicate-links"]
+  },
+  {
+    "id": "alt-text-quality",
+    "wcag": "1.1.1",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Image descriptions are actually useful",
+    "why": "A scan can tell you an image has alt text, but not whether it's any good.",
+    "how_to_check": [
+      "Check each meaningful image's alt text.",
+      "Ask: if the image disappeared, would this text give the same information?",
+      "Check decorative images have empty alt text (alt=\"\")."
+    ],
+    "pass_looks_like": "Meaningful images have short, accurate descriptions and decorative ones are skipped.",
+    "common_fixes": "Describe the purpose, not the file name. Use empty alt for pure decoration.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html",
+    "axe_rules": ["role-img-alt"],
+    "helpers": ["images", "same-alts"],
+    "axe_possible": ["image-redundant-alt"]
+  },
+  {
+    "id": "structure",
+    "wcag": "1.3.1",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Headings, lists, and tables are marked up properly",
+    "why": "Screen readers use structure to let people skim and jump around.",
+    "how_to_check": [
+      "Check that text that looks like a heading is marked up as a heading (h1 to h6), and that the levels follow a logical outline.",
+      "Check lists use real list elements and data tables use real table headers."
+    ],
+    "pass_looks_like": "The page's visual structure matches its HTML structure.",
+    "common_fixes": "Use heading levels for meaning, not size. Use CSS for looks.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+    "axe_rules": [
+      "list",
+      "listitem",
+      "definition-list",
+      "dlitem",
+      "th-has-data-cells",
+      "td-headers-attr",
+      "empty-table-header",
+      "heading-order",
+      "empty-heading",
+      "page-has-heading-one"
+    ],
+    "helpers": ["headings"],
+    "axe_possible": ["p-as-heading"]
+  },
+  {
+    "id": "use-of-color",
+    "wcag": "1.4.1",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Color is never the only way to show something",
+    "why": "People with color blindness or low vision can miss meaning that's only shown by color.",
+    "how_to_check": [
+      "Find places color carries meaning: errors, required fields, chart lines, selected states.",
+      "Check there's also text, an icon, or a pattern."
+    ],
+    "pass_looks_like": "Information is still clear in grayscale.",
+    "common_fixes": "Add text labels or icons next to color cues, and underline links in body text.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+    "axe_rules": ["link-in-text-block"],
+    "helpers": []
+  },
+  {
+    "id": "resize-text",
+    "wcag": "1.4.4",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Text can be enlarged to 200% without breaking",
+    "why": "Many people zoom text to read comfortably.",
+    "how_to_check": [
+      "Zoom the browser to 200% (Ctrl/Cmd and +).",
+      "Check nothing is cut off, overlapping, or missing."
+    ],
+    "pass_looks_like": "All content and functions are still available at 200%.",
+    "common_fixes": "Use relative units like rem and avoid fixed heights on text containers.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "reflow",
+    "wcag": "1.4.10",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "The page fits a narrow screen without sideways scrolling",
+    "why": "People who zoom a lot, or use small screens, shouldn't have to scroll in two directions to read.",
+    "how_to_check": [
+      "Make the window about 320 pixels wide, or zoom to 400% on a wide screen.",
+      "Check the content fits one column and you only scroll up and down."
+    ],
+    "pass_looks_like": "No horizontal scrolling for normal content. Tables and maps may be an exception.",
+    "common_fixes": "Use responsive layouts and let long text and images wrap or shrink.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "captions",
+    "wcag": "1.2.2",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Videos with sound have captions",
+    "why": "Deaf and hard-of-hearing users need captions to follow along.",
+    "how_to_check": [
+      "Play each prerecorded video.",
+      "Turn captions on and check they match the speech and important sounds."
+    ],
+    "pass_looks_like": "Captions exist and are accurate.",
+    "common_fixes": "Add caption tracks. Don't rely on auto-captions without checking them.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
+    "axe_rules": ["video-caption"],
+    "helpers": []
+  },
+  {
+    "id": "moving-content",
+    "wcag": "2.2.2",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Moving or blinking content can be paused",
+    "why": "Motion can be distracting or make reading impossible for some people.",
+    "how_to_check": [
+      "Look for carousels, auto-playing video, and animations that run longer than five seconds.",
+      "Check each one has a pause, stop, or hide control."
+    ],
+    "pass_looks_like": "Anything that moves for more than five seconds can be paused.",
+    "common_fixes": "Add a visible pause button and respect the prefers-reduced-motion setting.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html",
+    "axe_rules": ["marquee", "blink", "meta-refresh"],
+    "helpers": []
+  },
+  {
+    "id": "focus-not-hidden",
+    "wcag": "2.4.11",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": true,
+    "title": "Sticky bars don't cover the focused item",
+    "why": "A sticky header or cookie banner can hide the element you just tabbed to.",
+    "how_to_check": [
+      "Tab through the page with any sticky headers, footers, or banners showing.",
+      "Check the focused item is never completely hidden behind them."
+    ],
+    "pass_looks_like": "A focused item is always at least partly visible.",
+    "common_fixes": "Add scroll padding (scroll-padding-top) so focused items scroll clear of sticky bars.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+    "axe_rules": [],
+    "helpers": ["focus-walk"]
+  },
+  {
+    "id": "target-size",
+    "wcag": "2.5.8",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": true,
+    "title": "Buttons and links are big enough to tap",
+    "why": "Small, tightly packed targets are hard to hit with a finger, a tremor, or a mouse.",
+    "how_to_check": [
+      "Check buttons and icon links are at least 24 by 24 CSS pixels, or have enough space around them.",
+      "Pay attention to icon-only buttons and links in dense lists."
+    ],
+    "pass_looks_like": "Each target is at least 24 by 24 pixels. Or, if it is smaller, a 24 pixel circle centered on it does not overlap another target or another small target's circle.",
+    "common_fixes": "Increase padding on small controls. Links inside a sentence are exempt.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "axe_rules": ["target-size"],
+    "helpers": []
+  },
+  {
+    "id": "dragging",
+    "wcag": "2.5.7",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": true,
+    "title": "Anything you drag can also be done with a click or tap",
+    "why": "Dragging is hard or impossible for many people.",
+    "how_to_check": [
+      "Find drag-and-drop, sliders, and sortable lists.",
+      "Check there is another way to do the same thing with single clicks or taps."
+    ],
+    "pass_looks_like": "Every drag action has a simple alternative.",
+    "common_fixes": "Add up and down buttons to reorder, or click-to-place options.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "consistent-help",
+    "wcag": "3.2.6",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": true,
+    "title": "Help is in the same place on every page",
+    "why": "People who struggle to find help shouldn't have to hunt for it on each page.",
+    "how_to_check": [
+      "If the site offers contact info, chat, or an FAQ link, visit a few pages.",
+      "Check it appears in the same spot and order each time."
+    ],
+    "pass_looks_like": "Help options are in a consistent location across pages.",
+    "common_fixes": "Put help links in the shared header or footer.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "redundant-entry",
+    "wcag": "3.3.7",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": true,
+    "title": "People don't have to re-enter the same information",
+    "why": "Retyping is tiring and error-prone, especially for people with memory or motor difficulties.",
+    "how_to_check": [
+      "Walk through a multi-step form or checkout.",
+      "Check info you already gave isn't asked for again, or is filled in for you."
+    ],
+    "pass_looks_like": "Previously entered details are reused or easy to select.",
+    "common_fixes": "Pre-fill fields or offer a 'same as above' option. Security re-entry like password confirmation is allowed.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "accessible-login",
+    "wcag": "3.3.8",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": true,
+    "title": "Logging in doesn't depend on memory or puzzles",
+    "why": "Remembering passwords or solving puzzles is hard for people with cognitive disabilities.",
+    "how_to_check": [
+      "Try the login flow.",
+      "Check you can paste into password fields and use a password manager.",
+      "Check there's no puzzle or transcription test without an alternative."
+    ],
+    "pass_looks_like": "Sign-in works with paste, a password manager, or another simple method.",
+    "common_fixes": "Don't block paste. Offer email links, passkeys, or other alternatives to puzzles.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "errors",
+    "wcag": "3.3.1",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Form errors are described in text",
+    "why": "People need to know what went wrong and where.",
+    "how_to_check": [
+      "Submit a form with mistakes on purpose.",
+      "Check the error says which field has the problem and what to fix, in words."
+    ],
+    "pass_looks_like": "Errors are shown in text, near the field, and announced to screen readers.",
+    "common_fixes": "Write clear messages, link them to the field, and don't rely only on red color.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html",
+    "axe_rules": [],
+    "helpers": []
+  },
+  {
+    "id": "labels-instructions",
+    "wcag": "3.3.2",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Form fields have clear labels and instructions",
+    "why": "Placeholder text disappears and isn't a label.",
+    "how_to_check": [
+      "Check each field has a visible label.",
+      "Check any format rules (like date format) are stated before the field."
+    ],
+    "pass_looks_like": "Every field has a visible label and needed instructions.",
+    "common_fixes": "Use <label> elements tied to inputs. Keep placeholders as hints only.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html",
+    "axe_rules": ["label", "label-title-only", "form-field-multiple-labels", "select-name"],
+    "helpers": ["placeholders"]
+  },
+  {
+    "id": "custom-controls",
+    "wcag": "4.1.2",
+    "level": "A",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Custom controls tell assistive tech what they are",
+    "why": "A custom dropdown or toggle needs a name, a role, and a state for screen readers.",
+    "how_to_check": [
+      "List any custom widgets: menus, tabs, toggles, sliders.",
+      "Turn on a screen reader and check each announces its name, type, and current state."
+    ],
+    "pass_looks_like": "Custom widgets announce what they are and whether they're open, selected, or checked.",
+    "common_fixes": "Prefer native HTML elements. Otherwise add the right ARIA role and state and keep them updated.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
+    "axe_rules": [
+      "aria-allowed-attr",
+      "aria-allowed-role",
+      "aria-command-name",
+      "aria-conditional-attr",
+      "aria-deprecated-role",
+      "aria-dialog-name",
+      "aria-input-field-name",
+      "aria-meter-name",
+      "aria-progressbar-name",
+      "aria-prohibited-attr",
+      "aria-required-attr",
+      "aria-required-children",
+      "aria-required-parent",
+      "aria-roles",
+      "aria-tab-name",
+      "aria-text",
+      "aria-toggle-field-name",
+      "aria-tooltip-name",
+      "aria-treeitem-name",
+      "aria-valid-attr",
+      "aria-valid-attr-value",
+      "nested-interactive",
+      "presentation-role-conflict"
+    ],
+    "helpers": ["roles"]
+  },
+  {
+    "id": "status-messages",
+    "wcag": "4.1.3",
+    "level": "AA",
+    "core": false,
+    "new_in_2_2": false,
+    "title": "Updates like 'Saved' or 'Item added' are announced",
+    "why": "Screen reader users can miss messages that appear without moving focus.",
+    "how_to_check": [
+      "Trigger actions that show messages: saving, adding to cart, search results updating.",
+      "Turn on a screen reader and check the message is read out."
+    ],
+    "pass_looks_like": "Status messages are spoken without the user having to hunt for them.",
+    "common_fixes": "Put messages in a live region (role=\"status\" or aria-live).",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+    "axe_rules": [],
+    "helpers": ["live-regions"]
+  }
+]

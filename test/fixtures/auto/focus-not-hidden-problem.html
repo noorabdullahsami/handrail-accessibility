@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sticky cover problem page</title>
+  <!--
+    focus-not-hidden: issues 1, possible 0
+      issue     a.under sits under the fixed bar, so it is fully covered when focused
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } .bar { position: fixed; top: 0; left: 0; right: 0; height: 80px; background: #0b2e6b; z-index: 10; padding: 1rem; }
+.bar a { color: #fff; }
+.under { position: absolute; top: 30px; left: 300px; }
+main { padding-top: 100px; }</style>
+</head>
+<body>
+<div class="bar"><a href="/home" class="in-bar">Home</a></div>
+<main>
+  <h1>Sticky cover problem page</h1>
+  <a href="/hidden" class="under">Hidden link</a>
+  <p><a href="/fine">Visible link</a></p>
+</main>
+</body>
+</html>

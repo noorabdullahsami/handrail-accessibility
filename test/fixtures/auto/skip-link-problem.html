@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Skip link problem page</title>
+  <!--
+    skip-link: issues 0, possible 4
+      possible  no headings, landmarks or skip link at all (axe bypass; axe
+                marks this "needs review", not a failure, so it is possible)
+      possible  no skip link near the top and no main landmark (our check)
+      possible  no main landmark (axe landmark-one-main)
+      possible  content outside any landmark (axe region, 1 element)
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } </style>
+</head>
+<body>
+<div>
+  <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a> <a href="/four">Four</a>
+  <p>Content with no landmarks and no headings.</p>
+</div>
+</body>
+</html>

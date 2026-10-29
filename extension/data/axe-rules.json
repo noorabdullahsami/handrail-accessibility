@@ -1,0 +1,702 @@
+{
+  "accesskeys": {
+    "title": "Keyboard shortcut keys are not used twice",
+    "why": "If two elements share the same accesskey, the shortcut goes to the wrong place or does nothing.",
+    "how_to_fix": "Give every accesskey attribute a different letter, or remove accesskey if you do not need it.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "area-alt": {
+    "title": "Clickable areas of image maps have text",
+    "why": "Screen reader users hear nothing useful for an image map area with no text, so they cannot tell where it goes.",
+    "how_to_fix": "Add an alt attribute to each <area> with an href. Say where the link goes, like alt=\"Contact page\".",
+    "wcag": "2.4.4, 4.1.2",
+    "reviewed": false
+  },
+  "aria-allowed-attr": {
+    "title": "ARIA attributes fit the element's role",
+    "why": "Screen readers can ignore or misread ARIA attributes that do not belong to an element's role.",
+    "how_to_fix": "Remove the ARIA attributes this role does not support, or change the role to one that supports them.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-allowed-role": {
+    "title": "ARIA roles fit the element they are on",
+    "why": "A role that clashes with the element's normal meaning can confuse screen readers.",
+    "how_to_fix": "Remove the role, or use an HTML element that already means what you want, like <button> instead of a link with role=\"button\".",
+    "wcag": null,
+    "reviewed": false
+  },
+  "aria-braille-equivalent": {
+    "title": "Braille labels also have a normal label",
+    "why": "aria-braillelabel and aria-brailleroledescription only work as extras. People who do not use a braille display need the normal version too.",
+    "how_to_fix": "Keep a normal name (visible text or aria-label) next to aria-braillelabel, and a normal aria-roledescription next to aria-brailleroledescription.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-command-name": {
+    "title": "Custom buttons, links and menu items have names",
+    "why": "Screen readers announce a control with no name as just \"button\" or \"link\", so people cannot tell what it does.",
+    "how_to_fix": "Put visible text inside the element, or add aria-label or aria-labelledby.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-conditional-attr": {
+    "title": "ARIA attributes are used the way the role expects",
+    "why": "Some ARIA attributes only work in certain places. Used elsewhere, they give screen readers wrong or mixed information.",
+    "how_to_fix": "Remove the attribute, or move it to an element where it is allowed. The rule page lists the exact cases.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-deprecated-role": {
+    "title": "No outdated ARIA roles",
+    "why": "Outdated roles may not be supported by screen readers, so the element can lose its meaning.",
+    "how_to_fix": "Replace the role with a current one, or with a plain HTML element that means the same thing.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-dialog-name": {
+    "title": "Dialogs have a name",
+    "why": "When a dialog opens, screen readers read its name so people know what it is about.",
+    "how_to_fix": "Point aria-labelledby at the dialog's heading, or add aria-label.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "aria-hidden-body": {
+    "title": "The whole page is not hidden from screen readers",
+    "why": "aria-hidden=\"true\" on the body hides the entire page from screen readers.",
+    "how_to_fix": "Remove aria-hidden from the <body> element.",
+    "wcag": "1.3.1, 4.1.2",
+    "reviewed": false
+  },
+  "aria-hidden-focus": {
+    "title": "Hidden parts of the page cannot get keyboard focus",
+    "why": "Keyboard users can Tab into content that screen readers were told to ignore, and then hear nothing.",
+    "how_to_fix": "Remove aria-hidden, or make the controls inside unfocusable (tabindex=\"-1\", disabled, or the inert attribute).",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-input-field-name": {
+    "title": "Custom input fields have names",
+    "why": "Screen readers read the field's name to say what to type. Without one, people have to guess.",
+    "how_to_fix": "Add aria-labelledby pointing at the visible label, or add aria-label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-meter-name": {
+    "title": "Meters have names",
+    "why": "A meter with no name is read as just a number, with no hint of what it measures.",
+    "how_to_fix": "Add aria-label or aria-labelledby that says what the meter shows, like \"Battery level\".",
+    "wcag": "1.1.1",
+    "reviewed": false
+  },
+  "aria-progressbar-name": {
+    "title": "Progress bars have names",
+    "why": "A progress bar with no name is read as just a number, with no hint of what is loading.",
+    "how_to_fix": "Add aria-label or aria-labelledby, like \"Upload progress\".",
+    "wcag": "1.1.1",
+    "reviewed": false
+  },
+  "aria-prohibited-attr": {
+    "title": "No ARIA attributes the element is not allowed to use",
+    "why": "Some roles cannot take a name or certain states. Screen readers may ignore them, so the information is lost.",
+    "how_to_fix": "Remove the attribute, or give the element a role that allows it. For text, put it in the page instead of aria-label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-required-attr": {
+    "title": "Custom controls have the ARIA attributes they need",
+    "why": "Some roles need certain attributes, like aria-checked on a checkbox. Without them, screen readers cannot say the control's state.",
+    "how_to_fix": "Add the missing attributes listed for each element and keep them up to date with script.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-required-children": {
+    "title": "ARIA containers hold the right kind of items",
+    "why": "Roles like list, menu, or tablist need the right items inside, or screen readers cannot count or move through them.",
+    "how_to_fix": "Put the expected child roles inside, like role=\"tab\" inside role=\"tablist\", or remove the container role.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "aria-required-parent": {
+    "title": "ARIA items sit inside the right container",
+    "why": "Items like tabs, menu items, or list items only make sense inside their container. Alone, screen readers misreport them.",
+    "how_to_fix": "Wrap the item in its container role, like role=\"tablist\" around role=\"tab\", or remove the item's role.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "aria-roledescription": {
+    "title": "Custom role descriptions are on elements with a real role",
+    "why": "aria-roledescription replaces how a role is announced. On an element with no role, it is ignored or confusing.",
+    "how_to_fix": "Only use aria-roledescription on elements that have a role, or remove it.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-roles": {
+    "title": "ARIA roles are real roles",
+    "why": "A misspelled or made-up role is ignored, so the element loses the meaning you meant to give it.",
+    "how_to_fix": "Fix the spelling, use a role from the ARIA spec, or remove the role.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-tab-name": {
+    "title": "Tabs have names",
+    "why": "Screen readers announce a tab with no name as just \"tab\", so people cannot tell the tabs apart.",
+    "how_to_fix": "Put visible text in each tab, or add aria-label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-text": {
+    "title": "Text marked role=\"text\" has nothing focusable inside",
+    "why": "role=\"text\" flattens everything inside into plain text, so a link or button inside it loses its meaning.",
+    "how_to_fix": "Remove role=\"text\", or move the focusable element outside of it.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "aria-toggle-field-name": {
+    "title": "Custom checkboxes, switches and toggles have names",
+    "why": "Screen readers announce a toggle with no name as just \"checkbox\" or \"switch\", so people do not know what it changes.",
+    "how_to_fix": "Put visible text inside, or add aria-label or aria-labelledby.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-tooltip-name": {
+    "title": "Tooltips have text",
+    "why": "An empty tooltip gives screen reader users nothing to read.",
+    "how_to_fix": "Put text inside the element with role=\"tooltip\", or add aria-label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-treeitem-name": {
+    "title": "Tree items have names",
+    "why": "Screen readers announce a tree item with no name as just \"tree item\", so people cannot find their way.",
+    "how_to_fix": "Put visible text in each tree item, or add aria-label.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "aria-valid-attr-value": {
+    "title": "ARIA attributes have valid values",
+    "why": "An attribute with a wrong value, like aria-expanded=\"yes\", is ignored, so screen readers get the wrong state.",
+    "how_to_fix": "Use an allowed value, like \"true\" or \"false\", and make sure ID references point at elements that exist.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "aria-valid-attr": {
+    "title": "ARIA attribute names are spelled right",
+    "why": "A misspelled ARIA attribute is ignored, so the information it should carry is lost.",
+    "how_to_fix": "Fix the spelling, like aria-labelledby (two l's), or remove the attribute.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "audio-caption": {
+    "title": "Audio has a text version",
+    "why": "Deaf and hard of hearing people need words for what is said in audio.",
+    "how_to_fix": "Add a transcript near the audio player, or a captions track.",
+    "wcag": "1.2.1",
+    "reviewed": false
+  },
+  "autocomplete-valid": {
+    "title": "Autocomplete values are correct",
+    "why": "The right autocomplete value lets browsers fill in personal details, which helps people with memory or motor disabilities.",
+    "how_to_fix": "Use a value from the HTML list, like autocomplete=\"email\" or \"given-name\", or remove a wrong one.",
+    "wcag": "1.3.5",
+    "reviewed": false
+  },
+  "avoid-inline-spacing": {
+    "title": "Text spacing can be changed by the reader",
+    "why": "Some people need more space between letters, words, or lines to read. Inline styles with !important block their own settings.",
+    "how_to_fix": "Remove !important from inline letter-spacing, word-spacing, and line-height, or move those styles into your style sheet.",
+    "wcag": "1.4.12",
+    "reviewed": false
+  },
+  "blink": {
+    "title": "No blinking text",
+    "why": "Blinking text is hard to read and distracting, and some people cannot focus on the page while it moves.",
+    "how_to_fix": "Remove the <blink> element. If something needs attention, use color, weight, or a heading instead.",
+    "wcag": "2.2.2",
+    "reviewed": false
+  },
+  "button-name": {
+    "title": "Buttons have names that screen readers can read",
+    "why": "Screen readers announce a button with no name as just \"button\", so people do not know what it does.",
+    "how_to_fix": "Put text inside the button. For icon buttons, add aria-label, or visually hidden text inside the button.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "bypass": {
+    "title": "There is a way to skip to the main content",
+    "why": "Keyboard and screen reader users otherwise have to go through the whole menu on every page.",
+    "how_to_fix": "Add a \"Skip to main content\" link at the top, wrap the main content in <main>, or use headings at the start of each section.",
+    "wcag": "2.4.1",
+    "reviewed": false
+  },
+  "color-contrast": {
+    "title": "Text stands out clearly from its background",
+    "why": "Faint text is hard or impossible to read for people with low vision or color blindness, and for anyone in bright light.",
+    "how_to_fix": "Make the text darker or the background lighter, or the other way around. Normal text needs at least 4.5 to 1, large text at least 3 to 1.",
+    "wcag": "1.4.3",
+    "reviewed": false
+  },
+  "css-orientation-lock": {
+    "title": "The page works in both portrait and landscape",
+    "why": "Some people have their device mounted in one position and cannot turn it.",
+    "how_to_fix": "Do not use CSS to force one orientation. Let the layout adapt to both.",
+    "wcag": "1.3.4",
+    "reviewed": false
+  },
+  "definition-list": {
+    "title": "Definition lists are built correctly",
+    "why": "Screen readers rely on the <dl>, <dt>, <dd> structure to read terms and their meanings together.",
+    "how_to_fix": "Inside a <dl>, only use groups of <dt> and <dd> (optionally wrapped in <div>). Move anything else out.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "dlitem": {
+    "title": "Terms and definitions are inside a definition list",
+    "why": "A <dt> or <dd> on its own does not tell screen readers it belongs to a list of terms.",
+    "how_to_fix": "Wrap <dt> and <dd> elements in a <dl>.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "document-title": {
+    "title": "The page has a title",
+    "why": "The title is the first thing screen readers read, and it names the browser tab.",
+    "how_to_fix": "Add a <title> in the <head> that says what this page is, like \"Contact us: Example Shop\".",
+    "wcag": "2.4.2",
+    "reviewed": false
+  },
+  "duplicate-id-aria": {
+    "title": "IDs used by labels and ARIA are unique",
+    "why": "If two elements share an ID, a label or aria-labelledby can point at the wrong one.",
+    "how_to_fix": "Give each element a different ID, and update the label or ARIA attribute that points at it.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "empty-heading": {
+    "title": "Headings are not empty",
+    "why": "Screen reader users jump between headings. An empty one is announced as \"heading\" with nothing after it.",
+    "how_to_fix": "Put text in the heading, or remove the heading element if it is only used for spacing or style.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "empty-table-header": {
+    "title": "Table headers have text",
+    "why": "Screen readers read the header with each cell. An empty header gives no context.",
+    "how_to_fix": "Put text in every <th>. If a column truly has no header, use <td> instead.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "focus-order-semantics": {
+    "title": "Things you can Tab to have a role",
+    "why": "If you can Tab to something, screen readers need to know what it is, like a button or a link.",
+    "how_to_fix": "Use a real <button> or <a>, or add a fitting role to the element that has tabindex.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "form-field-multiple-labels": {
+    "title": "Each form field has one label",
+    "why": "When a field has several labels, screen readers may read only one, or read them in a confusing way.",
+    "how_to_fix": "Keep one <label> per field. Put extra hints in text linked with aria-describedby.",
+    "wcag": "3.3.2",
+    "reviewed": false
+  },
+  "frame-focusable-content": {
+    "title": "Frames with controls can be reached by keyboard",
+    "why": "tabindex=\"-1\" on a frame stops keyboard users from reaching the buttons and links inside it.",
+    "how_to_fix": "Remove tabindex=\"-1\" from the <iframe>.",
+    "wcag": "2.1.1",
+    "reviewed": false
+  },
+  "frame-tested": {
+    "title": "Some frames could not be checked",
+    "why": "The scan could not get into these frames, so problems inside them are not in the results.",
+    "how_to_fix": "Open the frame's address on its own and scan it there, or check it by hand.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "frame-title-unique": {
+    "title": "Each frame has a different title",
+    "why": "Screen reader users pick frames by title. If titles repeat, they cannot tell them apart.",
+    "how_to_fix": "Give each <iframe> a title that says what is inside it.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "frame-title": {
+    "title": "Frames have a title",
+    "why": "Screen readers read the title so people know what the frame contains before going in.",
+    "how_to_fix": "Add a title attribute to each <iframe>, like title=\"Map of our office\".",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "heading-order": {
+    "title": "Heading levels go down one step at a time",
+    "why": "Skipping levels, like h2 straight to h4, makes screen reader users think they missed something.",
+    "how_to_fix": "Use the next level down for sub-sections. Change the size with CSS, not by picking a different heading level.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "hidden-content": {
+    "title": "Hidden content was not checked",
+    "why": "The scan cannot check content that is hidden right now, like closed menus or tabs.",
+    "how_to_fix": "Open the hidden parts of the page, then scan again.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "html-has-lang": {
+    "title": "The page says which language it is in",
+    "why": "Screen readers use the page language to pick the right voice and pronunciation.",
+    "how_to_fix": "Add a lang attribute to the <html> element, like <html lang=\"en\">.",
+    "wcag": "3.1.1",
+    "reviewed": false
+  },
+  "html-lang-valid": {
+    "title": "The page says which language it is in",
+    "why": "Screen readers use the page language to pick the right voice. A wrong code means a wrong voice.",
+    "how_to_fix": "Use a real language code in <html lang>, like \"en\", \"en-GB\", or \"fr\".",
+    "wcag": "3.1.1",
+    "reviewed": false
+  },
+  "html-xml-lang-mismatch": {
+    "title": "The two page language settings agree",
+    "why": "When lang and xml:lang say different languages, screen readers may pick the wrong voice.",
+    "how_to_fix": "Make lang and xml:lang on <html> match, or remove xml:lang.",
+    "wcag": "3.1.1",
+    "reviewed": false
+  },
+  "image-alt": {
+    "title": "Images have a text description",
+    "why": "Screen readers read the description out loud instead of showing the image. Without one, people hear the file name or nothing.",
+    "how_to_fix": "Add an alt attribute to every <img> that says what the image shows. For decoration only, use alt=\"\".",
+    "wcag": "1.1.1",
+    "reviewed": false
+  },
+  "image-redundant-alt": {
+    "title": "Image text does not repeat the text next to it",
+    "why": "Screen reader users hear the same words twice in a row.",
+    "how_to_fix": "If the text next to the image already says it, use alt=\"\". Otherwise make the alt add something new.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "input-button-name": {
+    "title": "Input buttons have text",
+    "why": "Screen readers announce an input button with no text as just \"button\".",
+    "how_to_fix": "Add a value attribute, like <input type=\"submit\" value=\"Send\">, or add aria-label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "input-image-alt": {
+    "title": "Image buttons have text",
+    "why": "A button made from an image has no text unless you add it, so screen readers cannot say what it does.",
+    "how_to_fix": "Add an alt attribute to <input type=\"image\"> that says what the button does, like alt=\"Search\".",
+    "wcag": "1.1.1, 4.1.2",
+    "reviewed": false
+  },
+  "label-content-name-mismatch": {
+    "title": "A control's name includes its visible text",
+    "why": "Voice control users say what they see. If the hidden name is different, saying the visible words does nothing.",
+    "how_to_fix": "Make aria-label start with, or contain, the visible text. Or remove aria-label and use the visible text as the name.",
+    "wcag": "2.5.3",
+    "reviewed": false
+  },
+  "label-title-only": {
+    "title": "Form fields have a visible label",
+    "why": "A label that only appears as a tooltip is hidden from many people, including touch and keyboard users.",
+    "how_to_fix": "Add a visible <label> for the field. Keep title only for extra hints, if at all.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "label": {
+    "title": "Form fields have labels",
+    "why": "Screen readers read a field's label to say what to type. Without one, people hear \"edit text\" and have to guess.",
+    "how_to_fix": "Add a <label for=\"field-id\"> for every field, or wrap the field in the label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "landmark-banner-is-top-level": {
+    "title": "The page header is not inside another region",
+    "why": "Screen reader users jump to the header as a main part of the page. Nested inside something else, it is harder to find.",
+    "how_to_fix": "Move the site <header> (or role=\"banner\") so it is not inside <main>, <nav>, <aside>, or another region.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-complementary-is-top-level": {
+    "title": "Side content is not inside another region",
+    "why": "Screen reader users jump to <aside> regions directly. Nested, they are harder to find.",
+    "how_to_fix": "Move the <aside> (or role=\"complementary\") out of other regions, so it sits next to <main>.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-contentinfo-is-top-level": {
+    "title": "The page footer is not inside another region",
+    "why": "Screen reader users jump to the footer as a main part of the page. Nested inside something else, it is harder to find.",
+    "how_to_fix": "Move the site <footer> (or role=\"contentinfo\") so it is not inside <main> or another region.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-main-is-top-level": {
+    "title": "The main content is not inside another region",
+    "why": "Screen reader users jump straight to <main>. Nested inside something else, it is harder to find.",
+    "how_to_fix": "Move <main> so it is not inside <header>, <nav>, <aside>, or <footer>.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-no-duplicate-banner": {
+    "title": "The page has only one site header",
+    "why": "Two site headers make it unclear which one is the real top of the page.",
+    "how_to_fix": "Keep one top-level <header> for the site. Headers inside <article> or <section> are fine.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-no-duplicate-contentinfo": {
+    "title": "The page has only one site footer",
+    "why": "Two site footers make it unclear which one is the real end of the page.",
+    "how_to_fix": "Keep one top-level <footer> for the site. Footers inside <article> or <section> are fine.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-no-duplicate-main": {
+    "title": "The page has only one main area",
+    "why": "Screen reader users jump to the main content. With two, they may land in the wrong place.",
+    "how_to_fix": "Use one visible <main> element per page.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-one-main": {
+    "title": "The page marks its main content",
+    "why": "Screen reader users jump straight to the main content. Without a <main>, they have to search for it.",
+    "how_to_fix": "Wrap the main content of the page in a <main> element.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "landmark-unique": {
+    "title": "Page regions of the same kind have different names",
+    "why": "If a page has two <nav> regions with no names, screen reader users cannot tell them apart.",
+    "how_to_fix": "Give each one a label, like <nav aria-label=\"Main\"> and <nav aria-label=\"Footer\">.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "link-in-text-block": {
+    "title": "Links in text stand out without relying on color",
+    "why": "People who cannot see the color difference cannot find links that differ from text only by color.",
+    "how_to_fix": "Underline links in text, or give them another visible difference besides color.",
+    "wcag": "1.4.1",
+    "reviewed": false
+  },
+  "link-name": {
+    "title": "Links have text that screen readers can read",
+    "why": "Screen readers read the link text to say where a link goes. A link with no text is read as just \"link\".",
+    "how_to_fix": "Put text inside the link. For icon or image links, add alt text to the image or aria-label to the link.",
+    "wcag": "2.4.4, 4.1.2",
+    "reviewed": false
+  },
+  "list": {
+    "title": "Lists only contain list items",
+    "why": "Screen readers count the items and let people move through them. Other elements directly inside break that.",
+    "how_to_fix": "Inside <ul> and <ol>, only put <li> elements. Put other content inside an <li>.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "listitem": {
+    "title": "List items are inside a list",
+    "why": "An <li> on its own is not read as part of a list.",
+    "how_to_fix": "Wrap <li> elements in a <ul> or <ol>.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "marquee": {
+    "title": "No scrolling marquee text",
+    "why": "Moving text is hard to read and distracting, and it cannot be paused.",
+    "how_to_fix": "Remove the <marquee> element and show the text normally.",
+    "wcag": "2.2.2",
+    "reviewed": false
+  },
+  "meta-refresh": {
+    "title": "The page does not reload or redirect on a timer",
+    "why": "A timed reload can move people away before they finish reading, and it resets screen reader position.",
+    "how_to_fix": "Remove the <meta http-equiv=\"refresh\"> timer. Redirect on the server instead, or let people choose when to reload.",
+    "wcag": "2.2.1",
+    "reviewed": false
+  },
+  "meta-viewport-large": {
+    "title": "People can zoom in a lot on mobile",
+    "why": "People with low vision often need to zoom far in on phones.",
+    "how_to_fix": "In the viewport meta tag, remove maximum-scale or set it to 5 or more.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "meta-viewport": {
+    "title": "People can zoom in on mobile",
+    "why": "Blocking zoom stops people with low vision from making text bigger.",
+    "how_to_fix": "In the viewport meta tag, remove user-scalable=no and any maximum-scale below 2.",
+    "wcag": "1.4.4",
+    "reviewed": false
+  },
+  "nested-interactive": {
+    "title": "Controls are not put inside other controls",
+    "why": "A button inside a link (or the other way around) is read wrong by screen readers, and the inner one may not work by keyboard.",
+    "how_to_fix": "Move the inner control out, so each button or link stands on its own.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "no-autoplay-audio": {
+    "title": "Sound does not play on its own",
+    "why": "Sound that starts by itself covers up the screen reader voice.",
+    "how_to_fix": "Do not autoplay sound. If you must, stop it within 3 seconds or give a control to pause or mute it.",
+    "wcag": "1.4.2",
+    "reviewed": false
+  },
+  "object-alt": {
+    "title": "Embedded objects have text",
+    "why": "Screen readers cannot describe an <object> with no text alternative.",
+    "how_to_fix": "Add aria-label or a title to the <object>, or put a text description inside it.",
+    "wcag": "1.1.1",
+    "reviewed": false
+  },
+  "p-as-heading": {
+    "title": "Bold text is not used as a fake heading",
+    "why": "Text that only looks like a heading does not show up when screen reader users jump between headings.",
+    "how_to_fix": "If it is a heading, use <h2>, <h3>, and so on, and style it with CSS.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "page-has-heading-one": {
+    "title": "The page has a main heading",
+    "why": "Screen reader users often jump to the h1 first to learn what the page is about.",
+    "how_to_fix": "Add one <h1> that says what the page is about.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "presentation-role-conflict": {
+    "title": "Elements marked as decoration really are ignored",
+    "why": "If an element marked role=\"none\" can still get focus or has ARIA, browsers expose it anyway, which confuses screen readers.",
+    "how_to_fix": "Remove role=\"none\" or role=\"presentation\", or remove the tabindex and global ARIA attributes from that element.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "region": {
+    "title": "All content is inside a page region",
+    "why": "Screen reader users move around by regions like header, main, and footer. Content outside them is easy to miss.",
+    "how_to_fix": "Put all content inside <header>, <nav>, <main>, <aside>, or <footer>.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "role-img-alt": {
+    "title": "Elements marked as images have text",
+    "why": "An element with role=\"img\" and no text is read as just \"image\".",
+    "how_to_fix": "Add aria-label or aria-labelledby that describes the image.",
+    "wcag": "1.1.1",
+    "reviewed": false
+  },
+  "scope-attr-valid": {
+    "title": "Table header scope is used correctly",
+    "why": "A wrong scope can make screen readers link cells to the wrong header.",
+    "how_to_fix": "Only use scope on <th>, with the value row, col, rowgroup, or colgroup.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "scrollable-region-focusable": {
+    "title": "Scrolling areas can be scrolled with the keyboard",
+    "why": "If a scrolling box cannot get focus, keyboard users cannot scroll it to see the rest.",
+    "how_to_fix": "Add tabindex=\"0\" and a label to the scrolling box, or make sure it contains something focusable.",
+    "wcag": "2.1.1, 2.1.3",
+    "reviewed": false
+  },
+  "select-name": {
+    "title": "Dropdowns have labels",
+    "why": "Screen readers read the label to say what the dropdown is for.",
+    "how_to_fix": "Add a <label for=\"id\"> for every <select>, or add aria-label.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "server-side-image-map": {
+    "title": "No server-side image maps",
+    "why": "Server-side image maps only work with a mouse click, so keyboard users cannot use them.",
+    "how_to_fix": "Use separate links, or a client-side map with <map> and <area> elements.",
+    "wcag": "2.1.1",
+    "reviewed": false
+  },
+  "skip-link": {
+    "title": "Skip links lead somewhere",
+    "why": "A skip link whose target is missing does nothing, so keyboard users stay stuck at the top.",
+    "how_to_fix": "Make the link's #target match an element ID on the page, like <main id=\"main\">.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "summary-name": {
+    "title": "Expand and collapse controls have text",
+    "why": "A <summary> with no text is read as just \"button\" or \"disclosure\", so people do not know what it opens.",
+    "how_to_fix": "Put text inside every <summary>.",
+    "wcag": "4.1.2",
+    "reviewed": false
+  },
+  "svg-img-alt": {
+    "title": "Images made with SVG have text",
+    "why": "An SVG marked as an image with no text is read as just \"image\".",
+    "how_to_fix": "Add a <title> as the first child of the SVG, or aria-label on the <svg>.",
+    "wcag": "1.1.1",
+    "reviewed": false
+  },
+  "tabindex": {
+    "title": "No tabindex values above zero",
+    "why": "A tabindex above zero changes the Tab order, so focus jumps around the page in a confusing way.",
+    "how_to_fix": "Use tabindex=\"0\" or remove tabindex, and put elements in the right order in the HTML.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "table-duplicate-name": {
+    "title": "A table's caption and summary say different things",
+    "why": "Screen readers read both, so the same words are heard twice.",
+    "how_to_fix": "Make the summary add something the caption does not say, or remove the summary.",
+    "wcag": null,
+    "reviewed": false
+  },
+  "table-fake-caption": {
+    "title": "Table titles use a caption, not a table cell",
+    "why": "A title put in a cell is read as data, not as the table's name.",
+    "how_to_fix": "Move the title into a <caption> element right after <table>.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "target-size": {
+    "title": "Buttons and links are big enough to tap",
+    "why": "Small targets close together are hard to hit for people with shaky hands or on touch screens.",
+    "how_to_fix": "Make each target at least 24 by 24 CSS pixels, or leave enough space around small ones so they do not crowd each other.",
+    "wcag": "2.5.8",
+    "reviewed": false
+  },
+  "td-has-header": {
+    "title": "Cells in large tables have headers",
+    "why": "In big tables, screen reader users need headers read with each cell to know what the number means.",
+    "how_to_fix": "Use <th> for row and column headers, with scope=\"col\" or scope=\"row\".",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "td-headers-attr": {
+    "title": "Table cells point at real headers",
+    "why": "If a headers attribute points at a missing ID, screen readers cannot say which header goes with the cell.",
+    "how_to_fix": "Make each ID in the headers attribute match a <th> in the same table.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "th-has-data-cells": {
+    "title": "Table headers have cells under them",
+    "why": "A header with no cells confuses screen reader users who move through the table.",
+    "how_to_fix": "Remove empty header rows or columns, or make sure each <th> has data cells.",
+    "wcag": "1.3.1",
+    "reviewed": false
+  },
+  "valid-lang": {
+    "title": "Language changes use real language codes",
+    "why": "Screen readers switch voice for parts in another language. A wrong code means a wrong voice.",
+    "how_to_fix": "Use a real code on the lang attribute, like lang=\"es\" for Spanish.",
+    "wcag": "3.1.2",
+    "reviewed": false
+  },
+  "video-caption": {
+    "title": "Videos have captions",
+    "why": "Deaf and hard of hearing people need captions to follow speech and sounds in a video.",
+    "how_to_fix": "Add a <track kind=\"captions\"> to the <video>, with a captions file.",
+    "wcag": "1.2.2",
+    "reviewed": false
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "color-contrast",
+    "rules": ["color-contrast"],
+    "wcag": "1.4.3",
+    "level": "AA",
+    "title": "Text stands out clearly from its background",
+    "why": "Faint text is hard or impossible to read for people with low vision or color blindness, and for anyone in bright light.",
+    "how_to_fix": "Make the text darker or the background lighter, or the other way around. Normal text needs a contrast ratio of at least 4.5 to 1. Large text (about 24px, or about 19px if bold) needs at least 3 to 1. A contrast checker tool can tell you the ratio of two colors.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "reviewed": false
+  },
+  {
+    "id": "image-alt",
+    "rules": ["image-alt"],
+    "wcag": "1.1.1",
+    "level": "A",
+    "title": "Images have a text description",
+    "why": "Screen readers read the description out loud instead of showing the image. Without one, people hear the file name or nothing at all.",
+    "how_to_fix": "Add an alt attribute to every <img>. Describe what the image shows or what it is for. If the image is only decoration, use an empty alt (alt=\"\") so screen readers skip it.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html",
+    "reviewed": false
+  },
+  {
+    "id": "label",
+    "rules": ["label"],
+    "wcag": "4.1.2",
+    "level": "A",
+    "title": "Form fields have labels",
+    "why": "Screen readers read a field's label to tell people what to type. Without one, people just hear \"edit text\" and have to guess.",
+    "how_to_fix": "Add a <label> element and connect it to the field with matching for and id attributes, or put the field inside the label. Placeholder text is not a label. If there is truly no room for visible text, add aria-label (a name only screen readers hear), but a visible label helps everyone.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
+    "reviewed": false
+  },
+  {
+    "id": "link-name",
+    "rules": ["link-name"],
+    "wcag": "2.4.4, 4.1.2",
+    "level": "A",
+    "title": "Links have text that screen readers can read",
+    "why": "A link with no text, such as an icon-only link, is read out as just \"link\". People cannot tell where it goes.",
+    "how_to_fix": "Put text inside the link. For an icon-only link, give the icon image alt text, or add aria-label (a name only screen readers hear) to the link, saying where it goes.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html",
+    "reviewed": false
+  },
+  {
+    "id": "button-name",
+    "rules": ["button-name"],
+    "wcag": "4.1.2",
+    "level": "A",
+    "title": "Buttons have names that screen readers can read",
+    "why": "A button with no text, such as an icon-only button, is read out as just \"button\". People cannot tell what it does.",
+    "how_to_fix": "Put text inside the button. For an icon-only button, add aria-label (a name only screen readers hear) that says what it does, for example aria-label=\"Close\".",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
+    "reviewed": false
+  },
+  {
+    "id": "page-language",
+    "rules": ["html-has-lang", "html-lang-valid"],
+    "wcag": "3.1.1",
+    "level": "A",
+    "title": "The page says which language it is in",
+    "why": "Screen readers use the page language to pick the right voice and pronunciation. Without it, the words may be read in the wrong accent or language.",
+    "how_to_fix": "Add a lang attribute with a valid language code to the <html> element. For example, <html lang=\"en\"> for English or <html lang=\"es\"> for Spanish.",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html",
+    "reviewed": false
+  }
+]

@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+  KNOWN DEFECTS (the end-to-end test asserts these counts; keep them in sync).
+  Serve this folder with:  python3 -m http.server 8000   (on Windows: python -m http.server 8000)
+  and open http://localhost:8000/broken.html
+
+  Core 8 automated checks, counted in axe "violations" (elements):
+    color-contrast   3   (.faint x3)
+                          + 1 "needs review" (text over a gradient background image)
+    image-alt        3   (2 in the page + 1 inside a web component's shadow DOM)
+    label            2   (#email, #age: no label, no placeholder. axe accepts a placeholder as a name)
+    link-name        2   (two icon-only links with no text)
+    button-name      3   (2 in the page + 1 inside a same-origin iframe, frame-ok.html)
+    html-has-lang    1   (the <html> element below has no lang attribute)
+    html-lang-valid  0
+
+  Also on purpose:
+    - an iframe from 127.0.0.1 (a different origin from localhost), which the
+      extension cannot get into, so it should say 1 frame could not be scanned
+    - a 12x12 px button, for the WCAG 2.2 target-size rule
+    - no <main> landmark, so best-practice rules like "region" fire
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Broken test page</title>
+  <style>
+    body { font-family: sans-serif; background: #fff; color: #111; }
+    .faint { color: #b5b5b5; }
+    .over-image { background-image: linear-gradient(90deg, #333, #ddd); color: #777; padding: 1rem; }
+    .icon { display: inline-block; width: 24px; height: 24px; background: #333; }
+    .tiny { width: 12px; height: 12px; padding: 0; border: 1px solid #333; font-size: 8px; }
+    iframe { width: 300px; height: 80px; border: 1px solid #333; }
+  </style>
+</head>
+<body>
+  <h1>Broken test page</h1>
+
+  <p class="faint">Faint text one.</p>
+  <p class="faint">Faint text two.</p>
+  <p class="faint">Faint text three.</p>
+  <p class="over-image">Text over a background image.</p>
+
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="40" height="40">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="40" height="40">
+  <shadow-card></shadow-card>
+
+  <form>
+    <input id="email" type="email">
+    <input id="age" type="number">
+  </form>
+
+  <a href="/one"><span class="icon"></span></a>
+  <a href="/two"><span class="icon"></span></a>
+
+  <button type="button"><span class="icon"></span></button>
+  <button type="button"></button>
+  <button type="button" class="tiny" aria-label="Tiny">x</button>
+  <a href="/three">A</a> <a href="/four">B</a>
+
+  <iframe src="frame-ok.html" title="Same-origin frame"></iframe>
+  <iframe id="cross-origin" title="Cross-origin frame"></iframe>
+
+  <script src="broken.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Alt text problem page</title>
+  <!--
+    alt-text-quality: issues 0, possible 7
+      possible  alt="IMG_0042.jpg", alt="photo", alt="Image of a dog", a 168-character alt
+      possible  two different images that both have alt="Logo"
+      possible  alt text repeated by the text next to it (axe image-redundant-alt)
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } </style>
+</head>
+<body>
+<main>
+  <h1>Alt text problem page</h1>
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="IMG_0042.jpg" width="20" height="20">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="photo" width="20" height="20">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Image of a dog" width="20" height="20">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="A very long description A very long description A very long description A very long description A very long description A very long description A very long description" width="20" height="20">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Logo" width="20" height="20">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP8AAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Logo" width="20" height="20">
+  <p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Contact us" width="20" height="20"> Contact us</p>
+</main>
+</body>
+</html>

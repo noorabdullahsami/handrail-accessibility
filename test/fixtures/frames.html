@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Frames test page</title>
+  <!--
+    One frame of each kind, each holding one button with no name, so the scan
+    should find a button-name issue in every frame it can reach:
+      same     frame-ok.html, same origin
+      srcdoc   inline HTML in the srcdoc attribute
+      blank    about:blank, filled in by frames.js
+      data     a data: URL (its own opaque origin)
+      sandbox  srcdoc with an empty sandbox attribute (opaque origin)
+      cross    frame-other.html from 127.0.0.1, a different origin
+      port     frame-other.html from this host on the next port (8000 -> 8001),
+               also a different origin. Serve test/fixtures on that port too:
+               python -m http.server 8001 --directory test/fixtures
+    The data and sandbox frames are scanned, but have no document the panel
+    can reach, so Show on page explains instead of outlining.
+  -->
+  <style>iframe { width: 300px; height: 80px; border: 1px solid #333; }</style>
+</head>
+<body>
+  <main>
+    <h1>Frames test page</h1>
+    <iframe id="same" src="frame-ok.html" title="Same-origin frame"></iframe>
+    <iframe id="srcdoc" title="Inline frame" srcdoc="<!doctype html><html lang='en'><title>Inline</title><button type='button'></button></html>"></iframe>
+    <iframe id="blank" title="Blank frame"></iframe>
+    <iframe id="data" title="Data frame" src="data:text/html,%3C!doctype%20html%3E%3Chtml%20lang%3D%22en%22%3E%3Ctitle%3EData%3C%2Ftitle%3E%3Cbutton%20type%3D%22button%22%3E%3C%2Fbutton%3E%3C%2Fhtml%3E"></iframe>
+    <iframe id="sandbox" title="Sandboxed frame" sandbox="" srcdoc="<!doctype html><html lang='en'><title>Sandboxed</title><button type='button'></button></html>"></iframe>
+    <iframe id="cross" title="Cross-origin frame"></iframe>
+    <iframe id="port" title="Frame from another port"></iframe>
+  </main>
+  <script src="frames.js"></script>
+</body>
+</html>

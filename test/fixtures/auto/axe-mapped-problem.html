@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Axe mapped problem page</title>
+  <!--
+    target-size: issues 2         two 12px buttons right next to each other
+    structure: issues 1            a <ul> with a <div> directly inside it (axe list)
+    custom-controls: issues 1      a role="checkbox" with no aria-checked (axe aria-required-attr)
+    use-of-color: issues 1         a link in text that differs from it only by a slight color change,
+                                   with no underline (axe link-in-text-block)
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } .tiny { width: 12px; height: 12px; padding: 0; margin: 0; font-size: 8px; border: 1px solid #111; background: #fff; }
+.text { color: #222; } .plain { color: #33335a; text-decoration: none; }</style>
+</head>
+<body>
+<main>
+  <h1>Axe mapped problem page</h1>
+  <p><button type="button" class="tiny" aria-label="Previous">&lt;</button><button type="button" class="tiny" aria-label="Next">&gt;</button></p>
+  <ul><div>Not a list item</div></ul>
+  <div role="checkbox" tabindex="0" aria-label="Subscribe">Subscribe</div>
+  <p class="text">Read our <a href="/terms" class="plain">terms of service</a> before you sign up.</p>
+</main>
+</body>
+</html>

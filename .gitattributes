@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# Keep the vendored axe-core byte-for-byte identical to the npm package.
+extension/vendor/** -text
+
+*.png binary
+*.otf binary
+*.zip binary

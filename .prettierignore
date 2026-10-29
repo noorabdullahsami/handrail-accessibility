@@ -1,0 +1,9 @@
+node_modules/
+dist/
+extension/vendor/
+test/.build/
+test/screenshots/
+test/fixtures/
+package-lock.json
+# HTML is left as written: reflowing it can change whitespace inside inline content.
+*.html

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Focus visible problem page</title>
+  <!--
+    focus-visible: issues 2, possible 1
+      issue     button.no-ring: outline removed, nothing changes on focus (confirmed on screen)
+      issue     a.away: gets focus but sits far off screen
+      possible  button.faint: only a very faint change inside it on focus
+    Not flagged: button.inner-change looks unchanged by its own styles, but its
+    label turns dark red on focus, and the screenshot shows that.
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } button { font: inherit; padding: 6px 12px; background: #fff; color: #111; border: 1px solid #111; }
+.no-ring:focus, .faint:focus, .inner-change:focus { outline: none; }
+.faint span { padding: 2px; }
+.faint:focus span { background: #f2f2f2; }
+.inner-change:focus span { color: #b00000; text-decoration: underline; }
+.away { position: absolute; left: -9999px; }</style>
+</head>
+<body>
+<main>
+  <h1>Focus visible problem page</h1>
+  <p><button type="button" class="no-ring">No ring</button></p>
+  <p><button type="button" class="faint"><span>Faint</span></button></p>
+  <p><button type="button" class="inner-change"><span>Inner change</span></button></p>
+  <a href="/away" class="away">Away</a>
+</main>
+</body>
+</html>

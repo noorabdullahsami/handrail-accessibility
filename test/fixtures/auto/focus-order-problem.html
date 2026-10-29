@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Focus order problem page</title>
+  <!--
+    focus-order: issues 0, possible 3
+      possible  a.first has tabindex="3"
+      possible  focus jumps from a.first (at the bottom) back up to a.top
+      possible  in the reversed row, focus moves from "Left in code" backwards to "Right in code"
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } .row { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 2rem; }
+.spacer { height: 2600px; }</style>
+</head>
+<body>
+<main>
+  <h1>Focus order problem page</h1>
+  <p><a href="/top" class="top">Top link</a></p>
+  <div class="row"><a href="/left">Left in code</a><a href="/right">Right in code</a></div>
+  <div class="spacer"></div>
+  <p><a href="/first" class="first" tabindex="3">Bottom link that goes first</a></p>
+</main>
+</body>
+</html>

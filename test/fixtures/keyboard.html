@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+  KEYBOARD AND GUIDED-CHECK HINTS TEST PAGE
+  The end-to-end test asserts these counts; keep them in sync.
+
+  Hints after a scan (shown as "N hints" on each guided check):
+    keyboard             2   clickable but not reachable with Tab: div.card (onclick), span[role=button] (no tabindex)
+    structure            2   heading-order (h3 before h2) + possible p-as-heading (.fake-heading)
+    link-purpose         2   "click here", "Read more"
+    alt-text-quality     2   alt="IMG_0042.jpg", alt="image"
+    labels-instructions  1   input named only by its placeholder
+    status-messages      0   (1 live region is listed, but lists are not counted as hints)
+    custom-controls      0   (2 custom controls listed: span[role=button], div[role=switch])
+    focus-order          1   axe "tabindex" rule (tabindex="5")
+
+  After "Check keyboard focus":
+    focus-visible        2   no visible focus: button.no-focus; focus cannot be seen: a.gone (off screen)
+    focus-order          2   the axe hint above + focus jumps back up from the tabindex="5" link
+    focus-not-hidden     1   a.under is covered by the fixed bar
+
+  Not flagged on purpose: the skip link (off screen, but moves into view when focused).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Keyboard test page</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; color: #111; background: #fff; }
+    .bar { position: fixed; top: 0; left: 0; right: 0; height: 60px; z-index: 10; background: #0f3d91; color: #fff; display: flex; align-items: center; padding: 0 1rem; }
+    .under { position: absolute; top: 10px; left: 300px; }
+    main { padding: 80px 1rem 1rem; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 70px; }
+    .gone { position: absolute; left: -9999px; }
+    .no-focus, .no-focus:focus, .no-focus:focus-visible { outline: none; }
+    .card { cursor: pointer; border: 1px solid #333; padding: 0.5rem; margin: 0.5rem 0; }
+    .menu { cursor: pointer; }
+    .fake-heading { font-size: 28px; font-weight: bold; }
+    .spacer { height: 2200px; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <a class="under" href="#covered">Covered link</a>
+  <div class="bar">Fixed bar</div>
+
+  <main id="main">
+    <h1>Keyboard test page</h1>
+    <h3>Skipped a level</h3>
+    <h2>Section</h2>
+
+    <p class="fake-heading">Looks like a heading</p>
+    <p>Body text under the fake heading. It is normal size and reads like a paragraph of text.</p>
+    <p>More body text, so the large bold line above stands out like a heading would.</p>
+
+    <button type="button" class="no-focus">Save</button>
+    <button type="button" id="normal">Normal button</button>
+
+    <div class="card" onclick="void 0">Open card <span>with inner text</span></div>
+    <span class="menu" role="button">Menu</span>
+    <div role="switch" tabindex="0" aria-checked="false">Dark mode</div>
+
+    <p><a href="/a">click here</a>, <a href="/b">Read more</a>, and <a href="/c">Pricing plans</a></p>
+
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="40" height="40" alt="IMG_0042.jpg">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="40" height="40" alt="image">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="40" height="40" alt="A red bicycle">
+
+    <p><input type="search" placeholder="Search"></p>
+    <div role="status">Saved</div>
+
+    <a class="gone" href="#gone">Hidden link</a>
+    <div class="spacer"></div>
+    <a href="/bottom" tabindex="5">Positive tabindex link</a>
+  </main>
+</body>
+</html>

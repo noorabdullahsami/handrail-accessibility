@@ -1,0 +1,10 @@
+TeX Gyre Heros, version 2.004
+Copyright 2007-2009 B. Jackowski and J.M. Nowacki (on behalf of TeX Users Groups).
+Based on URW Nimbus Sans L, released by URW++ under the GUST Font License.
+License: GUST Font License (GFL), an instance of the LaTeX Project Public License 1.3c.
+See GUST-FONT-LICENSE.txt and README-TeX-Gyre-Heros.txt.
+
+This folder is a partial copy of the TeX Gyre Heros package: only the Regular and Bold
+OpenType files are included, unmodified, plus the license and readme. No font file
+was renamed, converted, subset or otherwise changed.
+Full package: https://ctan.org/pkg/tex-gyre-heros

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handrail panel preview</title>
+  <link rel="icon" href="data:,">
+  <!--
+    The real panel code with mock data, for design work and screenshots.
+    Serve the repo root and open this page:
+      python -m http.server 8000      then  http://localhost:8000/test/preview.html
+    The same choices work as a link: ?state=typical&theme=dark&width=360
+  -->
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; background: #e9ece8; color: #17241f; }
+    form { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding: 0.75rem 1rem; background: #fff; border-bottom: 1px solid #c9d6cc; }
+    fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: center; }
+    legend, label.select { font-weight: 700; margin-right: 0.25rem; float: left; }
+    label { display: inline-flex; align-items: center; gap: 0.25rem; min-height: 24px; }
+    select { font: inherit; min-height: 28px; }
+    main { padding: 1rem; }
+    h1 { font-size: 1rem; margin: 0 0 0.75rem; }
+    iframe { display: block; height: 900px; border: 1px solid #6f8a7c; background: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+  <form id="choices">
+    <label class="select">State
+      <select name="state">
+        <option value="empty">Empty, before a scan</option>
+        <option value="scanning">Scanning</option>
+        <option value="typical" selected>Typical results</option>
+        <option value="zero">Zero issues</option>
+        <option value="many">300 issues</option>
+        <option value="long">Very long selectors</option>
+        <option value="error">Error (page cannot be scanned)</option>
+        <option value="worst">Worst case (every field at its worst)</option>
+      </select>
+    </label>
+    <fieldset>
+      <legend>Theme</legend>
+      <label><input type="radio" name="theme" value="light" checked> Light</label>
+      <label><input type="radio" name="theme" value="dark"> Dark</label>
+    </fieldset>
+    <fieldset>
+      <legend>Width</legend>
+      <label><input type="radio" name="width" value="320"> 320px</label>
+      <label><input type="radio" name="width" value="360" checked> 360px</label>
+      <label><input type="radio" name="width" value="420"> 420px</label>
+    </fieldset>
+  </form>
+  </header>
+  <main>
+    <h1>Panel preview</h1>
+    <iframe id="panel" title="Handrail panel preview"></iframe>
+  </main>
+  <script src="preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Focus visible clean page</title>
+  <!--
+    focus-visible: issues 0, possible 0 (every guided check with automation: 0 and 0)
+    Includes a skip link that is off screen until it gets focus.
+  -->
+  <style>body { font-family: sans-serif; color: #111; background: #fff; margin: 1rem; } a { color: #0b4fa8; } .skip { position: absolute; left: -9999px; } .skip:focus { left: 1rem; top: 1rem; }
+.custom:focus-visible { outline: 3px solid #0b4fa8; outline-offset: 2px; }</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<main id="main">
+  <h1>Focus visible clean page</h1>
+  <p><a href="/next">Next page</a></p>
+  <p><button type="button">Default ring</button></p>
+  <p><button type="button" class="custom">Custom ring</button></p>
+</main>
+</body>
+</html>
