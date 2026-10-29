@@ -47,7 +47,7 @@ const typicalScan = {
         '<p class="price-note">Prices include tax.</p>',
         'Fix any of the following:\n  Element has insufficient color contrast of 2.85 (foreground color: #9a9a9a, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1',
       ),
-      node('footer .legal', '<small class="legal">© 2026 Linen &amp; Loom</small>'),
+      node('footer .legal', '<small class="legal">© 2026 Example Linen Co.</small>'),
       node('.badge-new', '<span class="badge-new">New</span>'),
     ]),
     rule(
@@ -90,11 +90,8 @@ const typicalScan = {
       'frame-tested',
       [
         {
-          ...node(
-            'iframe[title="Map"]',
-            '<iframe src="https://maps.linenandloom.com/embed?q=shop" title="Map"></iframe>',
-          ),
-          frameUrl: 'https://maps.linenandloom.com/embed?q=shop',
+          ...node('iframe[title="Map"]', '<iframe src="https://maps.example.com/embed?q=shop" title="Map"></iframe>'),
+          frameUrl: 'https://maps.example.com/embed?q=shop',
         },
       ],
       { impact: 'critical', tags: ['best-practice'] },
@@ -241,7 +238,7 @@ const longScan = {
       [
         node(
           `${deep} > img`,
-          '<img src="https://cdn.linenandloom.com/assets/2026/10/very/long/path/to/an/image/file/name/that/keeps/going/hero-banner-final-final-v3.jpg">',
+          '<img src="https://cdn.example.com/assets/2026/10/very/long/path/to/an/image/file/name/that/keeps/going/hero-banner-final-final-v3.jpg">',
         ),
       ],
       { impact: 'critical' },
@@ -289,7 +286,7 @@ const worstScan = {
     rule('link-name', [
       node(
         '.footer a.app-store',
-        `<a class="app-store" href="https://apps.apple.com/app/linen-and-loom/id1234567890" aria-label="${'Download the Linen & Loom app for iPhone and iPad to get early access to seasonal sales, free shipping on every order and members-only collections '.repeat(2).trim()}"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgNDAiPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiLz48L3N2Zz4="></a>`,
+        `<a class="app-store" href="https://apps.apple.com/app/example-linen/id1234567890" aria-label="${'Download the Example Linen Co. app for iPhone and iPad to get early access to seasonal sales, free shipping on every order and members-only collections '.repeat(2).trim()}"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgNDAiPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiLz48L3N2Zz4="></a>`,
       ),
     ]),
     rule(
@@ -297,7 +294,7 @@ const worstScan = {
       [
         node(
           '.hero img',
-          '<img src="https://cdn.linenandloom.com/assets/campaigns/2026/autumn-winter/hero/linen-and-loom-autumn-winter-2026-campaign-hero-image-final-v7-approved-by-brand-team.jpg" width="1600" height="900">',
+          '<img src="https://cdn.example.com/assets/campaigns/2026/autumn-winter/hero/example-linen-autumn-winter-2026-campaign-hero-image-final-v7-approved-by-brand-team.jpg" width="1600" height="900">',
         ),
       ],
       { impact: 'critical' },
@@ -310,7 +307,7 @@ const worstScan = {
         {
           ...node('iframe#reviews', '<iframe id="reviews">'),
           frameUrl:
-            'https://widgets.reviews-platform-for-online-stores.example-cdn.net/embed/v3/storefronts/linen-and-loom/products/linen-shirt-in-washed-indigo-with-mother-of-pearl-buttons/reviews?locale=ja-JP&theme=light',
+            'https://widgets.reviews-platform-for-online-stores.example-cdn.net/embed/v3/storefronts/example-linen/products/linen-shirt-in-washed-indigo-with-mother-of-pearl-buttons/reviews?locale=ja-JP&theme=light',
         },
       ],
       { impact: 'critical', tags: ['best-practice'] },
@@ -337,7 +334,7 @@ export const STATES = {
     scan: worstScan,
     lists: worstLists,
     walk: { ...cleanWalk, stops: 500, total: 1284 },
-    url: 'https://shop.linenandloom.com/ja/コレクション/秋冬-2026/リネンシャツ-ウォッシュドインディゴ?variant=40213&utm_source=newsletter',
-    title: 'リネンシャツ（ウォッシュドインディゴ）｜Linen & Loom 公式オンラインストア — Льняная рубашка',
+    url: 'https://shop.example.com/ja/コレクション/秋冬-2026/リネンシャツ-ウォッシュドインディゴ?variant=40213&utm_source=newsletter',
+    title: 'リネンシャツ（ウォッシュドインディゴ）｜Example Linen Co. 公式オンラインストア — Льняная рубашка',
   },
 };

@@ -26,8 +26,8 @@ export function installMockChrome({ messages, state }) {
   const tab = {
     id: 1,
     windowId: 1,
-    url: state.url || 'https://shop.linenandloom.com/products/linen-shirt?ref=home',
-    title: state.title || 'Linen shirt | Linen & Loom',
+    url: state.url || 'https://shop.example.com/products/linen-shirt?ref=home',
+    title: state.title || 'Linen shirt | Example Linen Co.',
     status: 'complete',
   };
   const forever = new Promise(() => {});

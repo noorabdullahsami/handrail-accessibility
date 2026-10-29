@@ -35,7 +35,7 @@ const EXPECT = {
     headline: '2 of 8 core checks look good',
     meter: '1.3K',
     status: 'Issues found (1,284)',
-    address: 'shop.linenandloom.com/ja/コレクション/秋冬-2026/リネンシャツ-ウォッシュドインディゴ',
+    address: 'shop.example.com/ja/コレクション/秋冬-2026/リネンシャツ-ウォッシュドインディゴ',
   },
 };
 
