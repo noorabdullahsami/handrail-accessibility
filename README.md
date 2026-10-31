@@ -24,7 +24,7 @@ Scan again after you fix things, and the summary shows what you fixed and what i
 
 ## Install
 
-**Chrome Web Store:** coming soon to the Chrome Web Store.
+**Chrome Web Store:** [Get it here](https://chromewebstore.google.com/detail/handrail-accessibility-ch/jmmjkdjfbpieoggapbadinapgabkjgof).
 
 **From source:**
 
